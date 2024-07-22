@@ -12,9 +12,7 @@ cd task
 # создаём пустой файл task/dir2/empty
 touch dir2/empty
 # создаём файл task/dir2/hello.sh с таким содержанием:
-# #!/bin/bash
 # echo "$1, привет!"
-touch dir2/hello.sh
 echo 'echo "$1, привет!"' >> dir2/hello.sh
 # устанавливаем для task/dir2/hello.sh права rwxrw-r--
 chmod 764 dir2/hello.sh
@@ -31,7 +29,7 @@ cat dir2/list.txt >> dir1/summary.txt
 export NAME='Всем студентам'
 # запускаем task/dir2/hello.sh с переменной окружения NAME в качестве аргумента
 # вывод скрипта должен дописаться в файл task/dir1/summary.txt
-dir2/hello.sh "$NAME">> dir1/summary.txt
+./dir2/hello.sh "$NAME">> dir1/summary.txt
 # перемещаем с переименованием task/dir1/summary.txt в task/Практическое задание
 mv dir1/summary.txt ./"Практическое задание"
 # выводим на консоль содержимое файла task/Практическое задание
